@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proposal Interaction</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+        font-family: "Arial", sans-serif;
+      }
+
+      .container {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .buttons {
+        position: relative;
+      }
+
+      .btn {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        margin: 10px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: transform 0.3s, background-color 0.3s;
+      }
+
+      .btn-yes {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      .btn-yes:hover {
+        background-color: #45a049;
+        transform: scale(1.1);
+      }
+
+      .btn-no {
+        background-color: #f44336;
+        color: white;
+        position: absolute;
+      }
+
+      .btn-no:hover {
+        background-color: #d32f2f;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Will You Be Mine? 💖</h1>
+      <div class="buttons">
+        <button class="btn btn-yes" onclick="goToNextPage()">Yes</button>
+        <button class="btn btn-no" onclick="handleNo()" id="noButton">
+          No
+        </button>
+      </div>
+    </div>
+
+    <script>
+      const noButton = document.getElementById("noButton");
+
+      noButton.addEventListener("mouseover", () => {
+        const randomX = Math.random() * 200 - 100; // Random position left or right
+        const randomY = Math.random() * 200 - 100; // Random position up or down
+        noButton.style.transform = `translate(${randomX}px, ${randomY}px)`;
+      });
+
+      function goToNextPage() {
+        window.location.href = "love-message.html";
+      }
+
+      function handleNo() {
+        alert("You clicked No? 😢"); // Just in case it happens, though unlikely 😉
+      }
+    </script>
+  </body>
+</html>
